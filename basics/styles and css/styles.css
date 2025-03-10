@@ -1,0 +1,46 @@
+
+/* id selector - precedence 1*/
+/* #heading-id {
+    color: rgb(255, 81, 246);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+} */
+
+/* class selector precedence 2 */
+/* .heading-default {
+    color: rgb(23, 81, 239);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+} */
+
+/* element selector - precedence 3 */
+/* h1 {
+    color: rgb(255, 84, 84);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+} */
+
+/* grouping selectors  */
+/* h1, p ,#heading-default, .heading-group{
+    text-align: center;
+    color: blueviolet;
+    text-align: center;
+}  */
+
+/* box model */
+h1 {
+    padding: 10px;
+    border: darkblue;
+    border-style: solid;
+    border-width: 5px;
+    margin: 5px;
+    margin-top: 9px;
+}
+
+/* positioning of elements */
+.fixed-pos{
+    position: absolute;
+    top: 10px;
+    bottom: 20px;
+}
+
