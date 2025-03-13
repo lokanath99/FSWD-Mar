@@ -76,7 +76,7 @@
 } */
 
 /* pseudo-class */
-a:hover {
+/* a:hover {
     cursor: help;
     color: chartreuse;
 }
@@ -88,7 +88,7 @@ a:active{
 .btn-hover:hover {
     color: aquamarine;
     border-radius: 20%;
-}
+} */
 
 /* pseudo-elements */
 /* .para::first-letter {
@@ -103,7 +103,7 @@ h1:hover + p{
 } */
 
 /* animations in CSS */
-@keyframes anim1{
+/* @keyframes anim1{
     from {background-color: red;}
     to {background-color: aquamarine;}
 }
@@ -117,4 +117,66 @@ h1 {
     animation-name: anim2;
     animation-duration: 5s;
     animation-iteration-count: 10;
+} */
+
+* {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    transition: background-color 0.5s ease-in-out;
+}t
+
+h1 {
+    font-size: 2rem;
+}
+
+/* Default background */
+body {
+    background-color: rgb(233, 233, 233);
+}
+
+.breakpoint {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Small devices (phones, less than 600px) */
+@media (max-width: 600px) {
+    body {
+        background-color: lightcoral;
+    }
+    .breakpoint::after {
+        content: "Small Screen (Phone)";
+    }
+}
+
+/* Medium devices (ablets, 600px - 900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+    body {
+        background-color: lightblue;
+    }
+    .breakpoint::after {
+        content: "Medium Screen (Tablet)";
+    }
+}
+
+/* Large devices (desktops, 900px - 1200px) */
+@media (min-width: 900px) and (max-width: 1200px) {
+    body {
+        background-color: lightgreen;
+    }
+    .breakpoint::after {
+        content: "Large Screen (Desktop)";
+    }
+}
+
+/* Extra large devices (large desktops, more than 1200px) */
+@media (min-width: 1200px) {
+    body {
+        background-color: lightgoldenrodyellow;
+    }
+    .breakpoint::after {
+        content: "Extra Large Screen (Large Desktop)";
+    }
 }
