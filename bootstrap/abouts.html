@@ -4,7 +4,11 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>about</title>
-        <link rel="shortcut icon" href="./assets/icons8-portfolio-32.png" type="image/x-icon">
+        <link
+            rel="shortcut icon"
+            href="./assets/icons8-portfolio-32.png"
+            type="image/x-icon"
+        />
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -16,11 +20,13 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"
         ></script>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-
         <!-- nav bar -->
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
@@ -53,14 +59,16 @@
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a
-                                    class="nav-link "
+                                    class="nav-link"
                                     aria-current="page"
                                     href="./index.html"
                                     >Home</a
                                 >
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="./abouts.html">about</a>
+                                <a class="nav-link active" href="./abouts.html"
+                                    >about</a
+                                >
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">works</a>
@@ -71,15 +79,67 @@
             </div>
         </nav>
         <!-- end of nav bar -->
-         <!-- footer -->
+        <!-- main content -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6">
+                    <form
+                        action="https://formsubmit.co/lokanath1912@gmail.com"
+                        method="post"
+                    >
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input
+                                type="text"
+                                name="name"
+                                id=""
+                                class="form-control"
+                                placeholder="Please provide your Name here.."
+                                aria-describedby="helpId"
+                            />
+
+                            <label for="email" class="form-label">Email</label>
+                            <input
+                                type="email"
+                                class="form-control"
+                                name="email"
+                                id=""
+                                aria-describedby="emailHelpId"
+                                placeholder="abc@mail.com"
+                            />
+                            <small id="emailHelpId" class="form-text text-muted"
+                                >Enter your email</small
+                            >
+                            <br />
+                            <label for="" class="form-label"
+                                >Enter your Query here.</label
+                            >
+                            <textarea
+                                class="form-control"
+                                name=""
+                                id=""
+                                rows="3"
+                            ></textarea>
+                            <br />
+                            <button type="submit" class="btn btn-primary">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
                     <footer class="text-center">
                         <hr />
-                        <p><span class="material-symbols-outlined">
-                            call
-                            </span><a href="tel:+655669559">+655669559</a></p>
+                        <p>
+                            <span class="material-symbols-outlined"> call </span
+                            ><a href="tel:+655669559">+655669559</a>
+                        </p>
                         <p>
                             <span class="material-symbols-outlined">
                                 contact_mail
