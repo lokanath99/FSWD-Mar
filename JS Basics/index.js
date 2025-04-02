@@ -122,28 +122,54 @@ for (let c = 0; c < 5; c++) {
     console.log("Good morning!");
 }
 
-
 //         0, 1, 2, 3, 4, 5, 6
 // console.log(arr.length);
 for (let c = 0; c < arr.length; c++) {
     console.log(arr[c]);
 }
 
-
-for (var something of arr){
+for (var something of arr) {
     console.log(something);
 }
 
 var arr = [1, 2, 3, 5, 6, 5, 8];
-arr.forEach((num)=>{console.log(num)})
+arr.forEach((num) => {
+    console.log(num);
+});
 
 // functions
-function say_my_name(a,b){
+function say_my_name(a, b) {
     //n lines of code
-    console.log(a+b);
-    console.log("Talkalot...!")
-}//function defination
+    console.log(a + b);
+    console.log("Talkalot...!");
+} //function defination
 
-say_my_name(5,6)//calling a function
+say_my_name(5, 6); //calling a function
 
-say_my_name(8,2)
+say_my_name(8, 2);
+
+function add(...para) {
+    var result = 0;
+    for (var ele of para) {
+        result += ele;
+    }
+    return result;
+}
+
+console.log(add(5, 6, 5, 6, 5, 4, 3, 4, 6, 5));
+
+// anonymous functions
+a = (...para) => {
+    var result = 0;
+    for (var ele of para) {
+        result += ele;
+    }
+    return result;
+};
+
+console.log(a(56, 6, 8, 6, 9, 4, 5, 9, 5, 5));
+
+arr = [6,5,9,8,5,6,4,5,8,9];
+arr.forEach((ele)=>{
+    console.log(ele);
+})
