@@ -1,6 +1,27 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "./components/Navbar.jsx";
+import HandelArr from "./components/HandelArr.jsx";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+
+createRoot(document.getElementById("root")).render(
+    <StrictMode>
+        {/* <Navbar /> */}
+        <BrowserRouter>
+            <nav>
+                <Link to="/">Home</Link>
+                <Link to="/about">about</Link>
+            </nav>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+            </Routes>
+        </BrowserRouter>
+    </StrictMode>
+);
 
 // function Football(props) {
 //     return (
@@ -16,12 +37,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //         </>
 //     );
 // }
-createRoot(document.getElementById("root")).render(
-    <StrictMode>
-        {/* <ClassDemo person={person} /> */}
-        {/* <Football ballWithMaradona={false} /> */}
-    </StrictMode>
-);
+{
+    /* <ClassDemo person={person} /> */
+}
+{
+    /* <Football ballWithMaradona={false} /> */
+}
 
 // var a = 56;
 // var element = <h1>This i a reach app</h1>;

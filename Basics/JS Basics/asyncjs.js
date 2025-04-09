@@ -25,13 +25,13 @@ let promise = new Promise((resolve, reject) => {
 // promise.then(data => console.log(data)).catch(err => console.log(err))
 // console.log(promise)
 
-const fs = require('fs').promises;
+const fs = require("fs").promises;
 
-async function readfileAsync(){
-    let data = await fs.readFile('D:\\FSWD\\JS Basics\\example.txt', 'utf-8');
-    console.log(data); 
+async function readfileAsync() {
+    let data = await fs.readFile("D:\\FSWD\\JS Basics\\example.txt", "utf-8");
+    console.log(data);
 }
 
 readfileAsync()
 // let data = fs.readFile('D:\\FSWD\\JS Basics\\example.txt', 'utf-8');
-// console.log(data); 
+// console.log(data);

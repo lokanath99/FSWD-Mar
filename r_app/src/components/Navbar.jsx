@@ -35,13 +35,13 @@ function Navbar() {
                                     <a
                                         class="nav-link active"
                                         aria-current="page"
-                                        href="#"
+                                        href="/"
                                     >
                                         Home
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="./abouts.html">
+                                    <a class="nav-link" href="./abouts">
                                         about
                                     </a>
                                 </li>
