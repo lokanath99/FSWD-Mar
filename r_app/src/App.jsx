@@ -1,39 +1,50 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function App() {
-    const [count, setCount] = useState(0);
+    // var counter = 0;
+    //
+    const [counter, setCounter] = useState(0);
+    function updateCounter() {
+        setCounter(counter + 1);
+    }
+    const [data, setData] = useState("");
+    // function updateData(event) {
+    //     setData(event.target.value);
+    //     console.log(event.target.value);
+    // }
 
+    useEffect(() => {
+        var resPromise = axios.get(
+            "https://jsonplaceholder.typicode.com/posts"
+        );
+        resPromise
+            .then((response) => {
+                console.log(response.data[0]);
+                setData(response.data[0].body);
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
+    }, [counter]);
     return (
         <>
-            <div>
-                <a href="https://vite.dev" target="_blank">
-                    <img src={viteLogo} className="logo" alt="Vite logo" />
-                </a>
-                <a href="https://react.dev" target="_blank">
-                    <img
-                        src={reactLogo}
-                        className="logo react"
-                        alt="React logo"
-                    />
-                </a>
-            </div>
-            <h1>Vite + React 123</h1>
-            <div className="card">
-                <button onClick={() => setCount((count) => count + 1)}>
-                    count is {count}
+            <div className="text-center mt-5">
+                <h1>Hello {data}</h1>
+                <button className="btn btn-primary" onClick={updateCounter}>
+                    Increment
                 </button>
-                <p>
-                    Edit <code>src/App.jsx</code> and save to test HMR
-                </p>
+                <h1>{counter}</h1>
             </div>
-            <p className="read-the-docs">
-                Click on the Vite and React logos to learn more
-            </p>
         </>
     );
 }
 
 export default App;
+
+/* function Component(){
+    const [counter, setCounter] = useState()
+
+
+}*/
