@@ -9,6 +9,9 @@ function goodbye(name) {
 function goodbyeSpecial(name) {
     console.log("good bye your honour!!!", name);
 }
+greet("talkalot", (name) => {
+    console.log("Bye Bye Bye!!! ", name);
+});
 // greet("talkalot", (name) => {
 //     console.log("good bye from anonymous function!!!", name);
 // });
@@ -32,6 +35,6 @@ async function readfileAsync() {
     console.log(data);
 }
 
-readfileAsync()
+readfileAsync();
 // let data = fs.readFile('D:\\FSWD\\JS Basics\\example.txt', 'utf-8');
 // console.log(data);
