@@ -10,14 +10,16 @@ function goodbyeSpecial(name) {
     console.log("good bye your honour!!!", name);
 }
 greet("talkalot", (name) => {
-    console.log("Bye Bye Bye!!! ", name);
+    console.log("from big arrow function", name);
 });
+
+console.log(typeof greet);
 // greet("talkalot", (name) => {
 //     console.log("good bye from anonymous function!!!", name);
 // });
 
 let promise = new Promise((resolve, reject) => {
-    let success = true;
+    let success = false;
     if (success) {
         resolve("Hey the promise has been resolved to DATA");
     } else {
@@ -25,13 +27,13 @@ let promise = new Promise((resolve, reject) => {
     }
 });
 
-// promise.then(data => console.log(data)).catch(err => console.log(err))
+promise.then((data) => console.log(data)).catch((err) => console.log(err));
 // console.log(promise)
 
 const fs = require("fs").promises;
 
 async function readfileAsync() {
-    let data = await fs.readFile("D:\\FSWD\\JS Basics\\example.txt", "utf-8");
+    let data = await fs.readFile("D:\\FSWD\\Basics\\JS Basics\\example.txt", "utf-8");
     console.log(data);
 }
 

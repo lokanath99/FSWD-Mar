@@ -1,14 +1,8 @@
-function greet(name, callback) {
-    console.log("Hello ", name);
-    callback(name);
-}
-function goodbye(name) {
-    console.log("good bye!!!", name);
+const fs = require("fs").promises;
+
+async function readfileAsync() {
+    let data = await fs.readFile("D:\\FSWD\\Basics\\JS Basics\\example.txt", "utf-8");
+    console.log(data);
 }
 
-function goodbyeSpecial(name) {
-    console.log("good bye your honour!!!", name);
-}
-greet("talkalot", (name) => {
-    console.log("Bye Bye Bye!!! ", name);
-});
+readfileAsync();

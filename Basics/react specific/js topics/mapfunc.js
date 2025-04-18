@@ -1,6 +1,6 @@
 arr = [
     { name: "talkalot", age: 89 },
-    { name: "talka", age: 8 },
+    { name: "talk", age: 8 },
     { name: "lot", age: 9 },
 ];
 
