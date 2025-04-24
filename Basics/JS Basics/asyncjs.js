@@ -9,17 +9,17 @@ function goodbye(name) {
 function goodbyeSpecial(name) {
     console.log("good bye your honour!!!", name);
 }
-greet("talkalot", (name) => {
-    console.log("from big arrow function", name);
+greet("talkalot", (name)=>{
+    console.log("Good bye from the arrow function");
 });
 
-console.log(typeof greet);
+// console.log(typeof greet);
 // greet("talkalot", (name) => {
 //     console.log("good bye from anonymous function!!!", name);
 // });
 
 let promise = new Promise((resolve, reject) => {
-    let success = false;
+    let success = true;
     if (success) {
         resolve("Hey the promise has been resolved to DATA");
     } else {

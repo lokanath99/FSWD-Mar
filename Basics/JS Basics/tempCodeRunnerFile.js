@@ -1,8 +1,10 @@
-const fs = require("fs").promises;
+let promise = new Promise((resolve, reject) => {
+    let success = true;
+    if (success) {
+        resolve("Hey the promise has been resolved to DATA");
+    } else {
+        reject("Sorry the data couldnt be fetched");
+    }
+});
 
-async function readfileAsync() {
-    let data = await fs.readFile("D:\\FSWD\\Basics\\JS Basics\\example.txt", "utf-8");
-    console.log(data);
-}
-
-readfileAsync();
+promise.then((data) => console.log(data)).catch((err) => console.log(err));
