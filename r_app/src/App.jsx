@@ -1,23 +1,68 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { createContext, useState } from "react";
-import Home from "./Home.jsx";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-export var MyContext = createContext();
 function App() {
-    const [name, setName] = useState("");
+    const [data, setData] = useState([]);
+    useEffect(() => {
+        axios.get("http://localhost:3000/user").then((res) => {
+            setData(res.data);
+            console.log(res.data);
+        });
+    }, []);
+
+    const handleView = (name) => {
+        alert(`Viewing profile of ${name}`);
+    };
     return (
-        <>
-            <MyContext.Provider value={{ name, setName }}>
-                <div className="text-center mt-5">
-                    <h1>Hello {name}</h1>
-                    <Home />
-                </div>
-            </MyContext.Provider>
-        </>
+        <div className="container mt-4">
+            <div className="row">
+                {data.map((user, index) => (
+                    <div className="col-md-4 mb-4" key={index}>
+                        <div className="card h-100 shadow-sm border-primary">
+                            <div className="card-body d-flex flex-column justify-content-between">
+                                <h5 className="card-title text-primary">
+                                    👤 {user.name}
+                                </h5>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">
+                                        <strong>Age:</strong> {user.age}
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Adhaar:</strong> {user.adhaar}
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Gender:</strong> {user.gender}
+                                    </li>
+                                </ul>
+                                <button
+                                    className="btn btn-outline-primary mt-auto"
+                                    onClick={() => handleView(user.name)}
+                                >
+                                    View Profile
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
     );
 }
 
 export default App;
+
+// const [name, setName] = useState("");
+//     return (
+//         <>
+//             <MyContext.Provider value={{ name, setName }}>
+//                 <div className="text-center mt-5">
+//                     <h1>Hello {name}</h1>
+//                     <Home />
+//                 </div>
+//             </MyContext.Provider>
+//         </>
+//     );
 
 /* function Component(){
     const [counter, setCounter] = useState()

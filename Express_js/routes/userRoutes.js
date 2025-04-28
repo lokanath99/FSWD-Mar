@@ -6,14 +6,14 @@ router.get("/", async (req, res) => {
     try {
         var query = req.query;
         console.log(query);
-        await mongoose.connect("mongodb://127.0.0.1:27017/testdb");
+        await mongoose.connect(process.env.DB_URL);
         var userModel = require("../models/userSchema");
         var data = await userModel.find(query);
         res.json(data);
     } catch (err) {
         console.log(err.message);
         res.status(500).send(
-            "internal server error - DB connections denied..!"
+            "internal server error - DB connections denied.. !   " + err.message
         );
     } finally {
         mongoose.disconnect();
@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
     try {
         var data = req.body;
         // console.log(query);
-        await mongoose.connect("mongodb://127.0.0.1:27017/testdb");
+        await mongoose.connect(process.env.DB_URL);
         var userModel = require("../models/userSchema");
         var fdbk = await userModel.create(data);
         res.json(fdbk);
@@ -43,7 +43,7 @@ router.put("/", async (req, res) => {
         var update = data.update;
         console.log(typeof update[0]);
         console.log(query);
-        await mongoose.connect("mongodb://127.0.0.1:27017/testdb");
+        await mongoose.connect(process.env.DB_URL);
         var userModel = require("../models/userSchema");
         var found = await userModel.findOne(query);
         found[update[0]] = update[1];
@@ -60,7 +60,7 @@ router.put("/", async (req, res) => {
 router.delete("/", async (req, res) => {
     try {
         var query = req.body;
-        await mongoose.connect("mongodb://127.0.0.1:27017/testdb");
+        await mongoose.connect(process.env.DB_URL);
         var userModel = require("../models/userSchema");
         var fdbk = await userModel.deleteOne(query);
         res.json(fdbk);

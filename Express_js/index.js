@@ -1,14 +1,17 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
+// require("dotenv").config();
 
-const PORT = 3000;
-app.listen(PORT, (err) => {
-    if (err) {
-        console.log(err.message);
-    }
-    console.log(`server listing on port: ${PORT}`);
-});
+const corsOptions = {
+    credentials: true, //access-control-allow-credentials:true
+    optionSuccessStatus: 200,
+};
 
+console.log(process.env.PORT);
+console.log(process.env.API_KEY);
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -18,6 +21,13 @@ app.use("/", rootRouter);
 const userRouter = require("./routes/userRoutes");
 app.use("/user", userRouter);
 
+const PORT = 3000;
+app.listen(PORT, (err) => {
+    if (err) {
+        console.log(err.message);
+    }
+    console.log(`server listing on port: ${PORT}`);
+});
 // app.get("/", (req, res) => {
 //     console.log(req.method);
 //     // console.log(req.url);
